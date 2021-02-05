@@ -27,7 +27,20 @@
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
-    <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="/libs/jquery/jquery.min.js">
+		(function(){
+        if('{{ page.password }}'){
+            if (prompt('请输入文章密码') !== '{{ page.password }}'){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+	
+	
+	</script>
+	
+
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 
@@ -624,7 +637,7 @@ qualify<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            这里有东西被加密了，需要输入密码查看哦。
                         
                     </div>
                     <div class="publish-info">
@@ -638,14 +651,6 @@ qualify<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E4%B8%80%E5%B0%81%E4%BF%A1/">
-                        <span class="chip bg-color">一封信</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -883,7 +888,7 @@ qualify<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1.6k</span>&nbsp;字
+                class="white-color">201</span>&nbsp;字
             
             
             

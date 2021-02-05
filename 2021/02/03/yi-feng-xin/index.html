@@ -27,7 +27,20 @@
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
 
-    <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="/libs/jquery/jquery.min.js">
+		(function(){
+        if('{{ page.password }}'){
+            if (prompt('请输入文章密码') !== '{{ page.password }}'){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+	
+	
+	</script>
+	
+
 
 <meta name="generator" content="Hexo 5.3.0"></head>
 
@@ -363,13 +376,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E4%B8%80%E5%B0%81%E4%BF%A1/">
-                                <span class="chip bg-color">一封信</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -390,7 +399,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    9
                 </div>
                 
 
@@ -415,8 +424,18 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p> 我承认自己接触的互联网有点多，什么抽象烂梗都略懂一二，这也让我十分苦恼，本质上，我认为自己是一个温柔的偏女性化的一个人（指心思），而上面那些东西（尤其是贴吧）极易让一个人变的暴躁易怒，愤世嫉俗，在我意识到自己的恨世来源后，我删除了贴吧和微博，希望自己能够脱离这些烂梗。<br>    后来我想想，更让我愤世嫉俗的是随着年龄增大，对结婚已不像是之前那样遥遥不可及，虽然可以不考虑，但也会发现自己可以开始考虑了。当这件事真正摆在我面前，而信息茧房又不断向我提出 女权男权，彩礼房车，劈腿外遇这些乱七八糟的事后，更让我变的焦躁，无法从客观上思考。于是，我卸载了它俩。又回到了soul。<br>    我在上一段感情结束后，完全没有再找另一半的想法，并不是她有多难忘，而是感觉自己身上的担子很重，在面对一个女生的时候，我会想自己是否有能力配得上对方，承担的起未来，或许这也是所谓的没有遇到心动的吧。<br>    那个soul其实是我的新创建的账号，我还有一个一千多天的，但已经很久没有登陆过了，原因很简单，不会聊天，遇到人都是日抛型选手。这可能就是理工男的通病，也可能是太长时间没有追过女生，以至于丧失了男性最原始的欲望。<br>    后来，我觉得这样也不是办法，总不能一直做日抛型，我读了好多心理学和沟通相关的书，嗯，好像还挺有道理的，我决定练练手。于是我重新注册了一个账号，决定大胆起来，反正谁也不认识谁，练手而已。后来我匹配到了你，<br>    你一开口就是亲戚来了，让我觉得，这一定是个”奇女子”，没想到的是，你还是个”才女子”。貌似我们聊的挺快乐的，被你说我像是程序员时，我都会想，原来沟通最主要的是神秘＋大胆。不过我一直觉得自己当时油腻到爆炸。世界上美好的东西不太多，立秋傍晚从河对岸吹来的风。<br>    我们聊的时间可真够久的，这得是 ‘好几百日抛型’ 啊。慢慢的，我觉得自己又重新对女生感起了兴趣，貌似敲碎这块冰的人是你。<br>    我的防御机制产生这样的想法来给冰加固加厚：1我们相距甚远，一千多公里，这份短时间内难以逾越的鸿沟会在两年内是性能最强的降温剂。2我自身条件不够优秀，感觉配不上。<br>    这些问题时常出现在我自己脑海中，去阻止我做一些冲动的事，可能活的越来久，就越容易安于现状，很多事情考虑的太多了。后来我想，干脆去见一面吧，说不定见面了，两人皆大欢喜或者花开两朵，不再胡思乱想。<br>    这貌似是个好主意，可我似乎并没有做好准备。我已经不小了，结婚这件事好像离我很近，伸伸手就能够到，或者有人拉着我的胳膊让我去触碰。这里产生了一个问题，我的下一个对象，有很大可能就是结婚对象，我做好承担家庭的责任了么，或许现在连恋爱都没有，说什么结婚更是无稽之谈。<br>    我认真思考了我俩:性格合得来，你温柔的一面中也透漏着大大咧咧，和我很像。你拿不定主意总是在犹豫，但不会自暴自弃，所以有几天你想死亡的事情真的是出乎我的预料。我们看待问题的态度出奇的一致，这令我喜出望外。希望你情绪跌落谷底时会想起，至少也有人被你的魅力所吸引，过去和将来也都会有。<br>    我比较宅，导致对这个社会的日常了解不多，我也一直在努力改进，不过进度缓慢。我不关心另一半外貌，我更看重性格。我的感情经历不多，这可能会在某些时候显得情商极低。有时候我会想，管他会遇到什么困难，错过你，可能就再也找不到这么合适的人了。<br>    这个有时候，逐渐占据了上风，可我依然将所有问题和思考都列了出来，将它发给你，这是最直男的做法了，很长时间，我都奉行书中的原则，按理说，烘托氛围到位后在表达好感，才是最正确的做法。可我忍不住了，只是这一次，我把所有想法，好的坏的，又说了出来，我觉得既然要有担当，就不能半哄半骗得把人家”骗”到手，这样不长久。<br>    你读到一半的时候应该就很能明白我的心中所想了，我并不要你的答案，我只是无法再将其藏在心里。<br>    不管如何，愿我们能变成”永不抛型选手”。<br>    安好<br>                                                2021.2.2晚11.30             </p>
-
+                <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="84e8ebf5458160f77c0fe16339761f92bc43a89f5867cb86cd63211e38a0f9ee">6191cd654a3c581811e7c245d0b3978b36a150595f85dd7d14eb590d68d3ca71b62d0ca3db6e005ec73cde3cf763c8717beda218342e0acc5e11ca74cffec3b1c5daa554a115ae68fb86436db3d13febb8136098723b13f9167cf706e9b64c5f4fd619d094ade2b128df2cb9e081c6449fa7393fb0b1440abeede0efd98147d3de82cc0b05f27f5fdd8e6b68f21c222b90329953974924d4091bc4617cec3ffc4f2db2042e9e487941f8f057f880809a34e304a475d05c5fdb548e42c114611a475e6b4269897f51ca50bd08457774aac98b9a70989793070d7c9c7679fb234ea2222f146d2c2357cfea8fb0abaa35f8960b1130b40822b22ac4f8dcabaee87d8b9806ccf3ae0dffd7f7bfe8ce390e2ab4f2de3156a5b4467963424cb664a4c6eb86f39208eb76ece2b4d511dabe4384e65a382c415a470dd9d40903d6f794493daef88e081974739d32bb4a6009cebcad19b6848ede176e82630b7711c555b9dfd3e543c8255fec4e02aacc0b2a8750be4f3dff971aa604232546675997ad479dac566a79f44b01658b5ae58ed33f06d74659ad22a354a60c11959e5bdb5161fa33de378d25981bc94c445ed6574c83caebeefadae61edfc364e598b38c5ab0e46f1e5ccf1af4c0b36cd68de51b571f55bf94ed3039a90d4f564c20a318ea126f2a59e8385686eb2562ffb971867d0de6f32e3c33bf4996d46172ef0541f1c19ba640207afe2afcc6ad435030a10269a6ac5a61a2333a91b0de37bcadbace879196480d995fa75e64c4fe1ca2136998ffe54893754f433c9e116d5778ee061c6f6f3066ab41786dd58639888d96c55a42575ea27e687bf39fc593910e4866856f9ebcbc9b85c6edb4252af04ea05751f366cefad82919295acf81a64a7a0fad4af54591d75c5425948cd9256ba1f63631431d456ea6c71b885e5eb734a70ca9e5d37ec53efef3b720a6fce171332a4bc8de1ebd40ebecb078f359db6121a76bd7dd94bae05086fbc88fae888bbe81d81af480b1181d1cdba7b28525bb87546d3fe9873b7fda1fe5862a5a1d72b8667933164b940ef28903bfb8654a7073c7a80b11e6f88ef89f22be4ed68985fd46b566fe7f655d57ca09f11a3eb7050431e271bcda9409494a3bb3a9c3f9b58bf03084a3269a23bab6de2ae22ced254a1032cb5dfb78fe5261e8b5f31fe0288b90da28125b076c59a4d2347d8391bcd028cc2d5d54d7294d21b5275952b0104a379d952cd2c724668168e784d848c7790803fa78c73fdfc5575cd599d09d354e3f6c4e5200538d4e5bff898035a8c47a4751dec623b523004f7cb8e01ac46d8079c8f2e5db484dbb86c8fd4947e0e2c24a6a9071d226fca8624106643b7a99a8d21aaa28c0209719b4fdb2741983524706e676f3a2fd0c285644e652d7326ede56197988d6276e936a36687e6cf3962c7378998fe45cc174c543e3c1d416cb5327fbcfd6a679c6ecd8d14f3c5b331ead418feee5454d6f7c55cf23099208be1774a1fbe82be8685d864600852694ea49e047cd72ce42a6620f878ec26f3e60a1614e2eb2ac38e42837fa90df2b545e66f51f0ba6f101c618243e80e9bb143548362aa44c7c681e7860c2d40853fc76bd9e24509e523958bb8b2819f10f272d19f7814f83d468049fc872837514f2da7e9dc15ab9402aef4e543d4ed79e6efdbcd1cfb8da80ee15738daa37ac0096f8bfa3956f686b13600d602d9b02fec651a11a28123570535d5193d4e0b2706348b6198ae9016cd4b24b02541de39a7cc34fe95d782079e57222b58292ae68ce35bea0f679ce6e674abec87255b1e68cf9c9f4e2390bfb955cd90e103496e4fa5bc0a9315b4850c1904e568632312b0de533e99fc7350034e186be593cd61342bd435286bd137934e4ace71c31d6500b84166513f3fc7d66af2252bc0ff303ea75a6f5c206f4803c1b60eaabd9165ed35bfcf6c73e6c4d60a3f54024afd66524893d639827f3d5a212188ece6bb8333e56a9e3b12288b9f1164bd4c9bcab1d5e90acc1c528a7187777b67b869a7611b2ef7099dea57c548574c25143cf5cf0b271162a3c095cf1040ce640169cf8cfd53500914563ba71dc4670d73a1863c514032eff7b329ba64a8bd63c334aabbadeb2fe29139facd00a79b0541b920e61758177c21fa6052e527431edeb3aa13b0106c2a0830a5033da58539e29fbe014e70f5a99e82d1e063259c24c2017bde8891071d876135384dce18e1ed3332ff0867db857b08ddaa44e180ce7381158f78ee5c51bef1dc03f1b9a6d0035156d366c67951eae95f4cc01a7f652e58630490ca98ea2be5acbc7cd6dc26d5d1135f23ae8abffdec8223aa73698bd133dd0bd16984c9e30b12affa1807ee4f2832d0e66ef5a50faca48aa0494abebd85b39915b051d40e0223696835d9bc1226a842112718b03276dc300cbf1a32138fb0d9c574fb70c6e65691b200943dee3a6a49ae23e3dd676ff148ef1c2480e1124d1c5935f53f116510aa8e3447a7353aad7d986dc742150243e8c168c6a671984f42f3594e5ab344bb8038b4f7d72951e88a9411b292501c8922492c79277d18047beebd93df526a746bfbd8f1893b7d5329b900bb19cc742079b7ff8e6416edc2ac6f80992e984d61be5cc382da7baec5cd24de460241f00ade5f94cb12ed8fd5c0ee37b55f43f900c63181f0de65d829698ff875686aae00b00bf1f23e780ce7ed4274bee554e8250d4236a7c1091197f0ac5898bf3169fbdc906593284062920c2bbde06cdfba557dc40481d4be5ae74ecd57016169565f29724f72caa1a2bf74e69e46c73aefdbbaa0654ed93a454cd469291aa6b73ec54e13c7556172628a34be985557c86a487bdcd830c40266dab42f05b0acc8f4da54397e4aa65ea67badfc64d1e6756087ab73955650a8e6a3c34b772b9dd935073a7a5b9de85f54620226d76b6b282ce7200cd6a326dab81968d3d37388e03653cd6a8b84949f5077744be8c216981b1300d991532919c0cf1f69181be8b79c54cffdf05e4a83dbb83e8739c01bdbe9af4ce4d2f60adfa80bd892d506fe26e1d437e3024519c2ac7c4fd6eff22d4c62dec3acda5668c7a12464e973aa58e45a3bbbfdf585672bb7d3f9b2cbfa9b58e861263943e4dec1c6e50f444755dcb8b195664be983a1093d3a908f06cd3995297ffddf7b7b8b987ad16a8f38e777270001df2a0d445fd96a3eac1b3d13dac3298e4765a8ff4d799832b8eb28ba5d52718019c36d35c3b219dbcd98eb92cc12347cda0c9eb1aa911db8132bea27fc701048b0b713521a2eea0df02f68425ff7d0dace36728a680ec7827fbf9c8dbe65294a8681ff8ce9da8aa3079e0cf3495e7bee35cbb0894456ac79b6a5205ac6f2e64ece7b753c1c8c7ed68fcd7e2ee29beafec564178de83969e02fdbbe6e87fb98e56bc829ef433ff320dd7bdbdeda5480ebe8355680d7879531071d16bca96e96da9c2dbb01fb3b8549078959e7864e9c636f64d464e9890a74865eab1cb2b26274ca63b6584a7bf02fc39ef7f5e80880a6ba5586937196152bcf173e07f4afeaf70397d23ceedac120cb95b90a2b8c84b1386501145a0aea63feabe063d229d2053e43ee1ac9b20e01b3707f0c492ca1946531a7e732b0086d45814ad8b6d67aaab5f042f908c56e2e3beedc878e876a8aa95fbf595fc83c2420b79296c16fd2307dccea8d36b8708b3f322684817505a6d998a019f2716c59291ed9336b6a495e1235c385787e0a3a07c6e771b2193fb80a5e65fe80e70ac1540ce6064bf0199dbbf047e57e07c55863c2cd4700f8b9cdaf4717ce1e87fb344b38f0a3d662a1257f3ee65669b2d9a1e96edd1b552c2be09eed01002ee54280f3bde517df8f9267753952991a365ada140bbf19f1a43437f5f0636ed08b043f64df67eb3399d85eefb4c92f4bf15b60ac2cc38c9c888a6d4edfe429072d43da4c1924a6a6fceb0dc2c2555d42f461215b94883be22161908eb043ad3c5b31117951c29aec59871d12fc4c9fc098ebfb76569669712001c09b7d2947bb054ee3dbe0670e963da6c47421d844e57f4217fa1cbed69d85ed8d76079e4afdf90e07cb403c61297e93c1475c6640351a06813af84cd226d5bd79750af924b8c1be62889b4dad84f9f0e99fc06fbb6df7b1523ea6b66c15868228aad05f754d1f4bad186b03a59eceda69500a47b1f86c0d7b44ecc807e951256092f41a7cdaf61fcd5f17997a5ae5bf8383a7269f3a29618526f5476e1bdd46f645f5f953f9971130192611da465f6fa5c18f454ecde7e7aa5ddd45ba21a0dc25ecb50a3baf66966a2ce1d93ccf6654e94f3d9a6e59ad0a06cd632b626c9e44eed09b992ed86ad5536115e4fc367b332c27a1519237e975db0c59a445dd6b11668f8937e90e3b0f18856d3de36f47bfd35bd99717b14b037c8aa5b2359fbb3c821f57f6844e55558e4a20d5a0e23f789020117762cf87ffc60c9361ee1c07f6775198130173028fd043019247b460fd2b53004c6dad6384d4abc52a9202b7b619f648a7453adcc5ed62259243cb2e4a64cea8718960a5157e52bd140cd7e76c4554533ed624d4b387f8fe790809e6c511e70f07837bc6dc1bad1117f63114d8599849558c458b694c53661a5122dd93be587848991700c08c37b13463955fe03285ad73f08633f9dc3b90ae8b0a311f4ce0f7b961df9e68d0510f9cffa883d44877c8d94489f5558b4b9ea462e6f643bf20c335abb8179ff56988c1d29b00ce5cc74feb866e03927b133fd587f1729fb57955ca5b0167f12dcda8197e51ebc0a5153fbb932d73f397d7ff0564e6b6c64d1c920dea160dbf3d5ceae74a09ef988b7b2d9a5cae31374d3e2d7212c9245c54d7a3c6c9e8659c9a57c4d260bd8dd41a8ebcc2726710be63c76cbfb43600d80a7dc33889050474bd16f1eb5ab45869b9655c700cd5206b00d0c77d3d19709b3d8ef017479ac6fd91d2f37f845824f47d3205233612a244e830cbd28e69951529025fb62ff9f7adf0a6881d892a52d8e602834adfd2cb7c47270f335825196a4576564c9c9794ba95df9ee69a5e30855d8fdef7647213967e13a614cd0455bf7dbbdc56a8b4c845d324ceab135fece2258a65bb04024ce125b67456408189a0ab0ab3eee80319d5f16ac5c4e962bef10d65a7d1239a2f52394427226e80007bebd2da2acbe0a59b500bdbb5fa2fc6bb2f2de597f9cac5b3277e69e95393e049feeb69fee9e4644cc82bedb208b0ac4c674f51b04c7b05bebd3bf70546976aab4c77fab9620f7b71e194451513e599624d82c748baca1f0b89729cf79fb7556d069b43d5c7ed5732c0c8978e28124054ff03805f7e2f68030e2df16c6cd99f0e9e83088b07d661c5c15c412e32c0e1248f18a0b915de7c8bf6879b43acc1386bf730c436247d7e9bfe8b46faad31e67987434af74c8cef02d103023a23befabf89d2db6281a1e6abc9c3758422650871661b57576ba68f5b7e67a644aacc0bbb4ffc81d77c15242257e27f425d7044e774e424c8d288ad5004bc4e537a237071fb8de64b89a0230e03b6438f23f8d69929191ca2994fa485b455860d2dac0028f9b976a297868722e9b96aec6f4b480f144e0c4251369773082023e32ac8cd6ea3989c1d2ef00500e8790b3a5e74e388e2fcc1f5f364f615ec9b7aae179aceca2f1586c6de2447bbc2c5132d6fe8ff44183233c0bf29cf1ebc178cc8281eb07f88051c0521d3179b469138564eaa7fbf2b2c1a24ca8f29f058afb02c14ec8ef4299554b2ffec264cad58552e66ffbd90d239a34b0d90977600054a73e08b1289bec5206695bc783f1f737fdc07fe1bc57cab0e9fb501dbdf03d37dde683c82e3f2a4daced5630ceef883a39fbefb33dfcd0b31bb4d1db2870f049a08827612ee538e50f152e5089eeabbf94e8adfa05b9cdb39a849ebce85612be98ba202d2a5e118e300c1a634f0ee38e7d7c933e9db91a2261c46c109d29f16d3973fb28aeaa9b958b7c558bcaf9e4fe4d81b58729f6b1334077cea1dc10a5bfc78876738eedea33c787bc0474f469f25a13a9db348ab89d4a50623e6c8e9d7fbd1e2977495213430dd978f44a0d5ef3fac100c3825305907adb00c1b4620526a4d09c21d773affbfc4834d855fea5de07ec4ebd068644f8aa5e24ef8760ebd7c1b23e5d0a3c437aac248b05ed2c9a8d56b1c8b9b443b60db502bc852b4f9f1aca4323f789b4fcb7eb593e3c04838c69bd8a19cccc26a8e58a6f9351d82a7545f18f4f3855d0b0e7e4b68d998df9827ee576784bf386eb568df636b5d72ea99affa05027812879a891f23e937eb5cbbf3625a7d65a56e37d5f0188e20e6ce75dfb462591035363cce26fced4236861e02ea4f66866c93e166f672dcac727a7670e7da94d44c220d7ceecfc80105df5f7cc620fed7b2f61523b158be813dc82ff5017a3c80354a8c2af7cd4d956a556f71fcf81929605b619a8b5778c0ce39ad2c027342168c87782b3c3f2079a2f433ba07c578c71ecc0cb7d72759a4ef4296a28517435f06c2fc1033fc886386e56ee8f1248f10170f968256fb98ede0427b3cb01e3855e2250c0df6d0cbb9a25813db0811b89aa9f14f8357271d13a064d68c398e36e0e0ad0f1a3d1894756f6ab0c8e9e168abd2a7dd6343f147e271b9b6fd897d602b20b7505234bc8437dc98937f72b914ca370dadb0482140326c373057b7e3d30743e03a2a59003798724857f5e89911287379eb5b4f83e7abad3ebf43bde5e6e2b23435e5656af4b8919ce64f10719d1480b5f3304115b465ecbe6c7558c30e82005ced5548e4fae7fc2661b70867084dd8a2fc531fd9fe41e397576ca595385d8ce601218d4d65a1e1078470589a9b7d6</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
                 
             </div>
             <hr/>
@@ -479,11 +498,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E4%B8%80%E5%B0%81%E4%BF%A1/">
-                                    <span class="chip bg-color">一封信</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -542,7 +557,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            这里有东西被加密了，需要输入密码查看哦。
                         
                     </div>
                     <div class="publish-info">
@@ -558,14 +573,6 @@
                     </div>
                 </div>
 
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E4%B8%80%E5%B0%81%E4%BF%A1/">
-                        <span class="chip bg-color">一封信</span>
-                    </a>
-                    
-                </div>
                 
             </div>
         </div>
@@ -810,7 +817,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1.6k</span>&nbsp;字
+                class="white-color">201</span>&nbsp;字
             
             
             
