@@ -122,4 +122,104 @@ qualify<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
         <tag>英语</tag>
       </tags>
   </entry>
+  <entry>
+    <title>记一次mysql升级</title>
+    <url>/2021/02/20/ji-yi-ci-mysql-sheng-ji/</url>
+    <content><![CDATA[<h3 id="MYSQL数据库升级"><a href="#MYSQL数据库升级" class="headerlink" title="MYSQL数据库升级"></a>MYSQL数据库升级</h3><h5 id="1-背景："><a href="#1-背景：" class="headerlink" title="1 背景："></a>1 背景：</h5><p>在使用gdjango中的orm创建表时，出现了1604错误</p>
+<pre class="line-numbers language-none"><code class="language-none">命令：python manage.py makemigrations
+命令：python manage.py migrate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>查询之后发现有可能是版本问题导致，</p>
+<pre class="line-numbers language-none"><code class="language-none">python 3.8
+django 3.1.5
+mysql 5.5.15<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>我决定将mysql5.5升级为5.7</p>
+<h5 id="2-开始"><a href="#2-开始" class="headerlink" title="2 开始"></a>2 开始</h5><h6 id="2-0备份旧数据库"><a href="#2-0备份旧数据库" class="headerlink" title="2.0备份旧数据库"></a>2.0备份旧数据库</h6><p>备份系统中所有数据库</p>
+<p>在cmd中 mysqldump -u root -h host -p –all-databases &gt; backdb.sql</p>
+<p>–&gt;&gt;<a href="https://www.cnblogs.com/yourblog/archive/2019/02/15/10381962.html">更多</a></p>
+<h6 id="2-1下载mysql5-7"><a href="#2-1下载mysql5-7" class="headerlink" title="2.1下载mysql5.7"></a>2.1下载mysql5.7</h6><p>—&gt;&gt;<a href="https://downloads.mysql.com/archives/community/">下载地址</a></p>
+<h6 id="2-2卸载旧版本5-5"><a href="#2-2卸载旧版本5-5" class="headerlink" title="2.2卸载旧版本5.5"></a>2.2卸载旧版本5.5</h6><p>1在控制面板中卸载<img src="C:\Users\84590\AppData\Roaming\Typora\typora-user-images\image-20210220193800651.png" alt="image-20210220193800651"></p>
+<p>2删除注册表</p>
+<pre class="line-numbers language-none"><code class="language-none">HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Eventlog\Application\MySQL文件夹
+HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services\Eventlog\Application\MySQL文件夹<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>3删除mysql安装目录</p>
+<p>4删除C盘下的C:\ProgramData\MySQL 所有文件</p>
+<p>5删除C:\Documents and Settings\All Users\Application Data\MySQL下的文件夹</p>
+<p>6重启</p>
+<h6 id="2-3安装5-7版本"><a href="#2-3安装5-7版本" class="headerlink" title="2.3安装5.7版本"></a>2.3安装5.7版本</h6><p>1 cmd进入安装目录</p>
+<pre class="line-numbers language-none"><code class="language-none">cd D:\Program Files (x86)\MySQL<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>2 解压后的文件中添加设置配置文件my.ini</p>
+<pre class="line-numbers language-none"><code class="language-none">[client]
+# 设置mysql客户端默认字符集
+default-character-set&#x3D;utf8
+ 
+[mysqld]
+# 设置3306端口
+port &#x3D; 3306
+# 设置mysql的安装目录
+basedir&#x3D;D:\Program Files (x86)\MySQL
+# 设置 mysql数据库的数据的存放目录，MySQL 8+ 不需要以下配置，系统自己生成即可，否则有可能报错
+# datadir&#x3D;D:\Program Files (x86)\MySQL\data
+# 允许最大连接数
+max_connections&#x3D;20
+# 服务端使用的字符集默认为8比特编码的latin1字符集
+character-set-server&#x3D;utf8
+# 创建新表时将使用的默认存储引擎
+default-storage-engine&#x3D;INNODB<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>3 初始化数据库：</p>
+<pre class="line-numbers language-none"><code class="language-none">mysqld --initialize --console<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>执行完成后，会输出 root 用户的初始默认密码，如：</p>
+<pre class="line-numbers language-none"><code class="language-none">2018-04-20T02:35:05.464644Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: APWCY5ws&amp;hjQ<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>APWCY5ws&amp;hjQ</strong> 就是初始密码，后续登录需要用到，你也可以在登陆后修改密码。</p>
+<p>输入以下安装命令：</p>
+<pre class="line-numbers language-none"><code class="language-none">mysqld install<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>启动输入以下命令即可：</p>
+<pre class="line-numbers language-none"><code class="language-none">net start mysql<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<blockquote>
+<p>注意: 在 5.7 需要初始化 data 目录：</p>
+<pre class="line-numbers language-none"><code class="language-none">cd C:\web\mysql-8.0.11\bin 
+mysqld --initialize-insecure <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>初始化后再运行 net start mysql 即可启动 mysql。</p>
+</blockquote>
+<p>4 登录mysql</p>
+<pre class="line-numbers language-none"><code class="language-none">mysql -h 主机名 -u 用户名 -p<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>5 利用SQLyog登录和恢复数据</p>
+<p><img src="C:\Users\84590\AppData\Roaming\Typora\typora-user-images\image-20210220194749623.png" alt="image-20210220194749623"></p>
+<p><img src="C:\Users\84590\AppData\Roaming\Typora\typora-user-images\image-20210220194832524.png" alt="image-20210220194832524"></p>
+<h5 id="3-成功"><a href="#3-成功" class="headerlink" title="3 成功"></a>3 成功</h5><pre class="line-numbers language-none"><code class="language-none">(venv) D:\GitHub\Code\mysite&gt;python manage.py makemigrations
+No changes detected
+
+(venv) D:\GitHub\Code\mysite&gt;python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, app01, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying app01.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying sessions.0001_initial... OK
+
+(venv) D:\GitHub\Code\mysite&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h5 id="4-参考文章"><a href="#4-参考文章" class="headerlink" title="4 参考文章"></a>4 参考文章</h5><p>1 <a href="https://www.runoob.com/mysql/mysql-install.html">https://www.runoob.com/mysql/mysql-install.html</a> 菜鸟教程-MySQL 安装</p>
+<p>2 <a href="https://blog.csdn.net/weixin_41792162/article/details/89921559">https://blog.csdn.net/weixin_41792162/article/details/89921559</a> 干净卸载mysql</p>
+<p>3 <a href="https://www.cnblogs.com/wbl001/p/11314887.html">https://www.cnblogs.com/wbl001/p/11314887.html</a> mysql升级</p>
+<p>4 <a href="https://www.cnblogs.com/yourblog/archive/2019/02/15/10381962.html">https://www.cnblogs.com/yourblog/archive/2019/02/15/10381962.html</a> mysql数据库备份</p>
+]]></content>
+  </entry>
 </search>
